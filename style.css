@@ -1,7 +1,73 @@
 body {
-  background-color: skyblue;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: beige;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
 }
 
 .calculator {
-  background-color: navy;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: darkgray;
+  border: 2px black solid;
+  border-radius: 3px;
+}
+
+.screen {
+  width: 242.63px;
+  margin: 16px;
+  word-wrap: break-word;
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 3px;
+}
+
+p {
+  margin: 0;
+  text-align: end;
+}
+
+.history {
+  font-size: 18px;
+  padding: 8px;
+}
+
+.current {
+  padding: 0 8px 8px 8px;
+  font-size: 28px;
+}
+
+.buttons {
+  margin: 0px 16px 16px 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+  padding: 12px 24px;
+  background-color: antiquewhite;
+  border: 1px black solid;
+  border-radius: 3px;
+}
+
+#clear,
+#delete {
+  grid-column: span 2;
+}
+
+#clear {
+  background-color: aliceblue;
+}
+
+#delete {
+  background-color: lightcoral;
 }

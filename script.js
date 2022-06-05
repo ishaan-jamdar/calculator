@@ -15,7 +15,7 @@ for (let num of nums) {
       mainScreen.textContent = '';
       lastEqual = false;
     }
-    mainScreen.textContent += num.textContent
+    mainScreen.textContent += num.textContent;
   });
 }
 

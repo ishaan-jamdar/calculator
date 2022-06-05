@@ -10,7 +10,13 @@ const prevScreen = document.querySelector('.history');
 const mainScreen = document.querySelector('.current');
 
 for (let num of nums) {
-  num.addEventListener('click', () => mainScreen.textContent += num.textContent);
+  num.addEventListener('click', () => {
+    if (lastEqual) {
+      mainScreen.textContent = '';
+      lastEqual = false;
+    }
+    mainScreen.textContent += num.textContent
+  });
 }
 
 for (let op of operators) {
@@ -21,7 +27,7 @@ for (let op of operators) {
     } else {
       newNum = mainScreen.textContent;
     }
-    newNum = +Number(newNum).toFixed(10)
+    newNum = +Number(newNum).toFixed(7)
     prevScreen.textContent = `${newNum} ${op.textContent}`;
     mainScreen.textContent = '';
   });
@@ -45,7 +51,8 @@ equalsBtn.addEventListener('click', () => {
     prevNum = Number(prevScreen.textContent.slice(0, -2));
     newNum = operate(prevNum, Number(mainScreen.textContent), prevScreen.textContent.slice(-1));
     prevScreen.textContent = '';
-    mainScreen.textContent = newNum.toFixed(10);
+    mainScreen.textContent = +newNum.toFixed(7);
+    lastEqual = true;
   }
 });
 

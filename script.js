@@ -27,7 +27,7 @@ for (let op of operators) {
     } else {
       newNum = mainScreen.textContent;
     }
-    newNum = +Number(newNum).toFixed(7)
+    newNum = +Number(newNum).toFixed(7);
     prevScreen.textContent = `${newNum} ${op.textContent}`;
     mainScreen.textContent = '';
   });

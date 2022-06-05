@@ -12,7 +12,14 @@ for (let num of nums) {
 
 for (let op of operators) {
   op.addEventListener('click', () => {
-
+    if (prevScreen.textContent) {
+      prevNum = Number(prevScreen.textContent.slice(0, -2));
+      newNum = operate(prevNum, Number(mainScreen.textContent), prevScreen.textContent.slice(-1));
+    } else {
+      newNum = mainScreen.textContent;
+    }
+    prevScreen.textContent = `${newNum} ${op.textContent}`;
+    mainScreen.textContent = '';
   });
 }
 
